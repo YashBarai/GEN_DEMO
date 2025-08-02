@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SAS Application – Fraud Detection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER LANDING -->
+  <div class="landing-screen" id="landingScreen">
+    <h1 class="landing-title">SAS Application – Fraud Detection</h1>
+    <p class="landing-subtitle">AI-driven intelligence. Human-ready decisions.</p>
+  </div>
+
+  <!-- MAIN UI -->
+  <div class="container hidden" id="mainContainer">
+    <!-- FORM SECTION -->
+    <div class="form-section" id="formContainer">
+  <h1 class="sas-brand-title">SAS Application – Fraud Detection</h1>
+
+  <div class="form-grid">
+    <div class="input-group">
+      <label for="full_name">Full Name</label>
+      <input type="text" id="full_name" placeholder="e.g., John Doe" />
+    </div>
+    <div class="input-group">
+      <label for="country">Country ISO</label>
+      <input type="text" id="country" placeholder="e.g., IN" />
+    </div>
+    <div class="input-group">
+      <label for="dob">DOB or Age</label>
+      <input type="text" id="dob" placeholder="e.g., 1987-05-16 or 35" />
+    </div>
+    <div class="input-group">
+      <label for="city">City</label>
+      <input type="text" id="city" placeholder="e.g., Mumbai" />
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <button id="submitBtn">Submit</button>
+  </div>
+</div>
+
+    <!-- OUTPUT SECTION -->
+    <div class="output-section hidden" id="outputContainer">
+      <div class="output-header">
+        <h2 id="outputName">[Name]</h2>
+        <span class="risk-level-badge" id="outputRiskTypeLevel">[Risk Level]</span>
+      </div>
+
+      <div class="output-meta">
+        <p><strong>Country:</strong> <span id="outputCountryName"></span></p>
+        <p><strong>Risk Category:</strong> <span id="outputCategory" class="category-pill"></span></p>
+        <p><strong>Confidence:</strong> <span id="outputConfidence"></span>%</p>
+      </div>
+
+      <div class="output-narrative">
+        <h3>Risk Narrative</h3>
+        <p id="outputRiskNarrative"></p>
+      </div>
+
+      <div class="output-summary">
+        <h3>Summary</h3>
+        <p id="outputSummary"></p>
+      </div>
+
+      <div class="output-score">
+        <strong>Score:</strong> <span id="outputScore"></span>/10
+      </div>
+
+      <div class="keywords">
+        <strong>Keywords:</strong> <span id="outputKeywords"></span>
+      </div>
+
+      <button id="viewSourcesBtn">View Sources</button>
+      <div class="source-links hidden" id="outputSource"></div>
+
+      <button id="backBtn">← Analyze Another</button>
+    </div>
+  </div>
+
+  <!-- MODERN LOADER -->
+ <div class="loading-overlay" id="loadingOverlay">
+  <div class="loader-container">
+    <div class="loader-ring"></div>
+    <img src="{{ url_for('static', filename='Logo.png') }}" alt="SAS Logo" class="loader-logo" />
+  </div>
+</div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
